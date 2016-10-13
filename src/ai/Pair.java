@@ -1,11 +1,12 @@
 package ai;
 
-public class Pair {
+public class Pair
+{
+    int x, y;
 
-	int x, y;
-	
-	public Pair(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}
+    public Pair(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
 }
