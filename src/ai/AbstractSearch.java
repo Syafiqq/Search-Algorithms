@@ -188,6 +188,8 @@ public class AbstractSearch
                 }
             }
         }
+        vmap[7 * 2 + 1][7 * 2 + 1] = '■';
+        vmap[startNode.x * 2 + 1][startNode.y * 2 + 1] = '●';
     }
 
     /*
@@ -251,11 +253,7 @@ public class AbstractSearch
                     vmap[(r.current.x) * 2 + 1][(r.current.y - 1) * 2 + 2] = '─';
                 }
             }
-            if(r.goal)
-            {
-                vmap[r.current.x * 2 + 1][r.current.y * 2 + 1] = '■';
-            }
-            else
+            if(!r.goal)
             {
                 if(vmap[r.current.x * 2 + 1][r.current.y * 2] == '─')
                 {
@@ -320,10 +318,6 @@ public class AbstractSearch
 
             }
             totalCost = printSolutionPath(rooms[r.parent.x][r.parent.y], pw, ++totalCost);
-        }
-        else
-        {
-            vmap[r.current.x * 2 + 1][r.current.y * 2 + 1] = '■';
         }
         return totalCost;
     }
